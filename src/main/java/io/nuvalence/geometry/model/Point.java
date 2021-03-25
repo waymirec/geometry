@@ -1,6 +1,6 @@
 package io.nuvalence.geometry.model;
 
-final public class Point implements Comparable<Point> {
+final public class Point implements Shape, Comparable<Point> {
     private final float x;
     private final float y;
 

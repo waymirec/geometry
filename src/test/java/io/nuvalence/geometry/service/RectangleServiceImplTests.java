@@ -38,7 +38,7 @@ public class RectangleServiceImplTests {
 
         whenAnalyzed();
 
-        thenResponseStateIs("intersected");
+        thenResponseStateIs(RectangleRelationship.INTERSECTED);
         thenResponseSubstateIs(null);
         thenResponseIntersectionsIs(args.expectedIntersections);
     }
@@ -52,7 +52,7 @@ public class RectangleServiceImplTests {
 
         whenAnalyzed();
 
-        thenResponseStateIs("separated");
+        thenResponseStateIs(RectangleRelationship.SEPARATED);
         thenResponseSubstateIs(null);
         thenResponseIntersectionsIsEmpty();
     }
@@ -66,7 +66,7 @@ public class RectangleServiceImplTests {
 
         whenAnalyzed();
 
-        thenResponseStateIs("contained");
+        thenResponseStateIs(RectangleRelationship.CONTAINED);
         thenResponseSubstateIs(null);
         thenResponseIntersectionsIsEmpty();
     }
@@ -80,8 +80,8 @@ public class RectangleServiceImplTests {
 
         whenAnalyzed();
 
-        thenResponseStateIs("adjacent");
-        thenResponseSubstateIs(null);
+        thenResponseStateIs(RectangleRelationship.ADJACENT);
+        thenResponseSubstateIs(args.expectedSubState);
         thenResponseIntersectionsIsEmpty();
     }
     //endregion
@@ -112,14 +112,14 @@ public class RectangleServiceImplTests {
         response = rectangleService.analyze(new AnalyzeRectangleRequest(firstRectangle, secondRectangle));
     }
 
-    private void thenResponseStateIs(final String expected)
+    private void thenResponseStateIs(final RectangleState expected)
     {
         assertEquals(expected, response.getState());
     }
 
-    private void thenResponseSubstateIs(final String expected)
+    private void thenResponseSubstateIs(final RectangleSubState expected)
     {
-        assertEquals(expected, response.getSubstate());
+        assertEquals(expected, response.getSubState());
     }
 
     private void thenResponseIntersectionsIs(List<PointDTO> expected)
@@ -233,26 +233,31 @@ public class RectangleServiceImplTests {
             new TestArgsBuilder() // 1
                 .withFirstRectangle(1, 1, 2, 2)
                 .withSecondRectangle(2, 1, 3, 2)
+                .withExpectedSubState(RectangleAdjacencyState.PROPER)
                 .build(),
 
             new TestArgsBuilder() // 2
                 .withFirstRectangle(2, 1, 3, 2)
                 .withSecondRectangle(1, 1, 2, 2)
+                .withExpectedSubState(RectangleAdjacencyState.PROPER)
                 .build(),
 
             new TestArgsBuilder() // 3
                 .withFirstRectangle(1, 1, 2, 2)
                 .withSecondRectangle(1, 2, 2, 3)
+                .withExpectedSubState(RectangleAdjacencyState.PROPER)
                 .build(),
 
             new TestArgsBuilder() // 4
                 .withFirstRectangle(1, 1, 3, 3)
                 .withSecondRectangle(2, 3, 4, 3)
+                .withExpectedSubState(RectangleAdjacencyState.PARTIAL)
                 .build(),
 
             new TestArgsBuilder() // 5
                 .withFirstRectangle(1, 1, 5, 2)
                 .withSecondRectangle(2, 2, 3, 2)
+                .withExpectedSubState(RectangleAdjacencyState.SUB_LINE)
                 .build()
         );
     }
@@ -263,6 +268,7 @@ public class RectangleServiceImplTests {
         public RectangleDTO firstRectangle;
         public RectangleDTO secondRectangle;
         public List<PointDTO> expectedIntersections = new ArrayList<>();
+        public RectangleSubState expectedSubState;
     }
 
     private static class TestArgsBuilder {
@@ -283,6 +289,12 @@ public class RectangleServiceImplTests {
         public TestArgsBuilder withExpectedIntersection(float x, float y)
         {
             args.expectedIntersections.add(new PointDTO(x, y));
+            return this;
+        }
+
+        public TestArgsBuilder withExpectedSubState(RectangleSubState subState)
+        {
+            args.expectedSubState = subState;
             return this;
         }
 

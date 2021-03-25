@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan("io.nuvalence.geometry")
 public class WebConfig {
-
     @Bean
     public ModelMapper modelMapper()
     {

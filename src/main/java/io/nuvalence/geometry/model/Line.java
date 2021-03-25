@@ -1,10 +1,11 @@
 package io.nuvalence.geometry.model;
 
 import io.nuvalence.geometry.util.Comparators;
-import io.nuvalence.geometry.util.Sorter;
+import io.nuvalence.geometry.util.LinePair;
+import io.nuvalence.geometry.util.SortedPair;
 
-public class Line implements Comparable<Line> {
-    private final Sorter<Line> sorter = new Sorter<>();
+public class Line implements Shape, Comparable<Line> {
+    private final SortedPair<Line> lines = new LinePair();
     private final Point firstPoint;
     private final Point secondPoint;
     private final boolean horizontal;
@@ -76,19 +77,20 @@ public class Line implements Comparable<Line> {
     public boolean isAdjacentTo(final Line other)
     {
         if (isPerpendicularTo(other)) return false;
+        lines.set(this, other);
         if (horizontal)
         {
-            sorter.sort(this, other, Comparators.LINE_VERTICAL);
-            Line left = sorter.first();
-            Line right = sorter.second();
+            lines.sort(Comparators.LINE_HORIZONTAL);
+            Line left = lines.first();
+            Line right = lines.second();
             return (left.firstPoint.getY() == right.firstPoint.getY()) &&
                    (left.secondPoint.getX() > right.firstPoint.getX());
         }
         else
         {
-            sorter.sort(this, other, Comparators.LINE_HORIZONTAL);
-            Line lower = sorter.first();
-            Line upper = sorter.second();
+            lines.sort(Comparators.LINE_VERTICAL);
+            Line lower = lines.first();
+            Line upper = lines.second();
             return (lower.firstPoint.getX() == upper.firstPoint.getX()) &&
                    (lower.secondPoint.getY() > upper.firstPoint.getY());
         }
@@ -98,10 +100,11 @@ public class Line implements Comparable<Line> {
     {
         if (other == null) return false;
         if (isParallelTo(other)) return false;
-        sorter.sort(this, other, Comparators.LINE_VERTICAL);
+        lines.set(this, other);
+        lines.sort(Comparators.LINE_VERTICAL);
 
-        final Line lower = sorter.first();
-        final Line upper = sorter.second();
+        final Line lower = lines.first();
+        final Line upper = lines.second();
         return (lower.secondPoint.getY() > upper.secondPoint.getY())
                && (upper.secondPoint.getX() > lower.firstPoint.getX()
                && (upper.firstPoint.getX() < lower.firstPoint.getX()));

@@ -1,17 +1,32 @@
 package io.nuvalence.geometry.dto;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel
 public class RectangleDTO {
+    @ApiModelProperty(notes = "Rectangle's lower-left Y coordinate")
+    @JsonProperty(required = true)
     private float lowerLeftX;
+    @ApiModelProperty(notes = "Rectangle's lower-left Y coordinate")
+    @JsonProperty(required = true)
     private float lowerLeftY;
+    @ApiModelProperty(notes = "Rectangle's upper-right X coordinate")
+    @JsonProperty(required = true)
     private float upperRightX;
+    @ApiModelProperty(notes = "Rectangle's upper-right Y coordinate")
+    @JsonProperty(required = true)
     private float upperRightY;
 
-    public RectangleDTO(final float x1, final float y1, final float x2, final float y2)
+    @JsonCreator
+    public RectangleDTO(final float lowerLeftX, final float lowerLeftY, final float upperRightX, final float upperRightY)
     {
-        this.lowerLeftX = x1;
-        this.lowerLeftY = y1;
-        this.upperRightX = x2;
-        this.upperRightY = y2;
+        this.lowerLeftX = lowerLeftX;
+        this.lowerLeftY = lowerLeftY;
+        this.upperRightX = upperRightX;
+        this.upperRightY = upperRightY;
     }
 
     public RectangleDTO()

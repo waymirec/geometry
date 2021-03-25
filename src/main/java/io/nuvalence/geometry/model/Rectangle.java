@@ -119,7 +119,7 @@ final public class Rectangle implements Shape {
     @Override
     public String toString()
     {
-        return String.format("Rectangle(upperLeft: %s, lowerRight: %s)", getLowerLeft(), getUpperRight());
+        return String.format("Rectangle(lowerLeft: %s, upperRight: %s)", getLowerLeft(), getUpperRight());
     }
 
     @Override
