@@ -13,10 +13,6 @@ Look no further!
 * [Maven](https://maven.apache.org/) (if you want to clone and execute the project)
 
 
-#### Stand-Alone ####
-* Download provided build [here](https://github.com/waymirec/geometry/blob/master/GeometryInspector-1.0.jar)
-
-
 ### Executing ###
 GeometryInspector can be executed in 2 ways:
 1. Download and execute the pre-built JAR provided [here](https://github.com/waymirec/geometry/blob/master/GeometryInspector-1.0.jar)
@@ -33,3 +29,11 @@ GeometryInspector can be executed in 2 ways:
 * Import the code into the Java IDE of your choice (e.g. [IntelliJ IDEA](https://www.jetbrains.com/idea/))
 * Open a terminal into the directory where the repository was cloned
 * Execute `mvnw spring-boot:run`
+
+
+### Help ###
+* API reference is available within GeometryInspector via [Swagger](https://swagger.io/)
+    * http://localhost:8080/swagger-ui.html#
+* Examples of how to make various calls to GeometryInspector are available within the provided [Postman](https://www.postman.com/) collection
+    * [geometry.postman_collection.json](https://github.com/waymirec/geometry/blob/master/geometry.postman_collection.json)
+
