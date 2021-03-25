@@ -1,0 +1,308 @@
+{
+	"info": {
+		"_postman_id": "d9627168-03d8-4f04-80ee-c48879bdee8b",
+		"name": "NuvalenceGeometry",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Rectangle",
+			"item": [
+				{
+					"name": "Analyze Rectangle - Contained",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true,
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first\": { \n    \"lowerLeftX\": 1, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 5, \n    \"upperRightY\": 5 \n  },\n    \"second\": { \n    \"lowerLeftX\": 2, \n    \"lowerLeftY\": 2, \n    \"upperRightX\": 3, \n    \"upperRightY\": 3 \n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/geometry/rectangle/analyze",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geometry",
+								"rectangle",
+								"analyze"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Analyze Rectangle - Intersected",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first\": { \n    \"lowerLeftX\": 1, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 3, \n    \"upperRightY\": 3 \n  },\n    \"second\": { \n    \"lowerLeftX\": 2, \n    \"lowerLeftY\": 2, \n    \"upperRightX\": 4, \n    \"upperRightY\": 5 \n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/geometry/rectangle/analyze",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geometry",
+								"rectangle",
+								"analyze"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Analyze Rectangle - Separated",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first\": { \n    \"lowerLeftX\": 1, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 3, \n    \"upperRightY\": 3 \n  },\n    \"second\": { \n    \"lowerLeftX\": 4, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 7, \n    \"upperRightY\": 3 \n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/geometry/rectangle/analyze",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geometry",
+								"rectangle",
+								"analyze"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Analyze Rectangle - Adjacent - Proper",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first\": { \n    \"lowerLeftX\": 1, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 3, \n    \"upperRightY\": 3 \n  },\n    \"second\": { \n    \"lowerLeftX\": 4, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 7, \n    \"upperRightY\": 3 \n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/geometry/rectangle/analyze",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geometry",
+								"rectangle",
+								"analyze"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Analyze Rectangle - Adjacent - Sub-Line",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first\": { \n    \"lowerLeftX\": 1, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 4, \n    \"upperRightY\": 4 \n  },\n    \"second\": { \n    \"lowerLeftX\": 4, \n    \"lowerLeftY\": 2, \n    \"upperRightX\": 7, \n    \"upperRightY\": 3 \n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/geometry/rectangle/analyze",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geometry",
+								"rectangle",
+								"analyze"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Analyze Rectangle - Adjacent - Partial",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first\": { \n    \"lowerLeftX\": 1, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 4, \n    \"upperRightY\": 4 \n  },\n    \"second\": { \n    \"lowerLeftX\": 4, \n    \"lowerLeftY\": 2, \n    \"upperRightX\": 7, \n    \"upperRightY\": 5 \n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/geometry/rectangle/analyze",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geometry",
+								"rectangle",
+								"analyze"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Analyze Rectangle - Missing First Rectangle",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first\": { \n    \"lowerLeftX\": 1, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 4, \n    \"upperRightY\": 4 \n  },\n    \"second\": { \n    \"lowerLeftX\": 4, \n    \"lowerLeftY\": 2, \n    \"upperRightX\": 7, \n    \"upperRightY\": 5 \n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/geometry/rectangle/analyze",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geometry",
+								"rectangle",
+								"analyze"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
