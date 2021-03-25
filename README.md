@@ -82,6 +82,14 @@ GeometryInspector can be executed in 2 ways:
 ```
 
 *Example Outputs*
+
+>```
+>{
+>    "state": "SEPARATED",
+>    "intersections": []
+>}
+>```
+
 >```
 >{
 >    "state": "CONTAINED",
