@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>io.nuvalence</groupId>
-	<artifactId>geometry</artifactId>
+	<artifactId>GeometryInspector</artifactId>
 	<version>1.0</version>
-	<name>Geometry</name>
-	<description>Geometry Analyzer</description>
+	<name>Geometry Inspector</name>
+	<description>Geometry Inspector</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
