@@ -4,8 +4,8 @@ import io.nuvalence.geometry.dto.AnalyzeRectangleRequest;
 import io.nuvalence.geometry.factory.RectangleFactory;
 import io.nuvalence.geometry.model.Rectangle;
 import io.nuvalence.geometry.util.Comparators;
-import io.nuvalence.geometry.util.RectanglePair;
-import io.nuvalence.geometry.util.SortedPair;
+import io.nuvalence.geometry.model.RectanglePair;
+import io.nuvalence.geometry.model.SortedPair;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

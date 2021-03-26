@@ -7,7 +7,8 @@ import io.nuvalence.geometry.service.RectangleAdjacencyState;
 import io.nuvalence.geometry.service.RectangleRelationship;
 import io.nuvalence.geometry.service.RectangleSubState;
 import io.nuvalence.geometry.util.Comparators;
-import io.nuvalence.geometry.util.SortedPair;
+import io.nuvalence.geometry.model.SortedPair;
+import io.nuvalence.geometry.util.LineExt;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -18,7 +19,7 @@ public class AdjacencyProcessor implements Processor<Rectangle> {
         rectangles.sort(Comparators.RECTANGLE_HORIZONTAL);
         final Rectangle left = rectangles.first();
         final Rectangle right= rectangles.second();
-        if(left.getRightLine().isAdjacentTo(right.getLeftLine()))
+        if (LineExt.isAdjacentTo(left.getRightLine(), right.getLeftLine()))
         {
             response.setState(RectangleRelationship.ADJACENT);
             response.setSubState(determineAdjacency(left.getRightLine(), right.getLeftLine()));
@@ -28,7 +29,7 @@ public class AdjacencyProcessor implements Processor<Rectangle> {
         rectangles.sort(Comparators.RECTANGLE_VERTICAL);
         final Rectangle lower = rectangles.first();
         final Rectangle upper = rectangles.second();
-        if (lower.getTopLine().isAdjacentTo(upper.getBottomLine()))
+        if (LineExt.isAdjacentTo(lower.getTopLine(), upper.getBottomLine()))
         {
             response.setState(RectangleRelationship.ADJACENT);
             response.setSubState(determineAdjacency(lower.getTopLine(), upper.getBottomLine()));

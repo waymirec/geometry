@@ -1,9 +1,5 @@
 package io.nuvalence.geometry.model;
 
-import io.nuvalence.geometry.util.Comparators;
-import io.nuvalence.geometry.util.LinePair;
-import io.nuvalence.geometry.util.SortedPair;
-
 public class Line implements Shape, Comparable<Line> {
     private final SortedPair<Line> lines = new LinePair();
     private final Point firstPoint;
@@ -39,109 +35,6 @@ public class Line implements Shape, Comparable<Line> {
         return horizontal;
     }
 
-    public boolean isVertical()
-    {
-        return !horizontal;
-    }
-
-    public boolean isLeftOf(final Line other)
-    {
-        return other == null || this.getFirstPoint().getX() < other.getFirstPoint().getX();
-    }
-
-    public boolean isRightOf(final Line other)
-    {
-        return other == null || this.getFirstPoint().getX() > other.getFirstPoint().getX();
-    }
-
-    public boolean isAbove(final Line other)
-    {
-        return other == null || this.getFirstPoint().getY() > other.getSecondPoint().getY();
-    }
-
-    public boolean isBelow(final Line other)
-    {
-        return other == null || this.getSecondPoint().getY() < other.getFirstPoint().getY();
-    }
-
-    public boolean isParallelTo(final Line other)
-    {
-        return other != null && this.horizontal == other.horizontal;
-    }
-
-    public boolean isPerpendicularTo(final Line other)
-    {
-        return other != null && !isParallelTo(other);
-    }
-
-    public boolean isAdjacentTo(final Line other)
-    {
-        if (isPerpendicularTo(other)) return false;
-        lines.set(this, other);
-        if (horizontal)
-        {
-            lines.sort(Comparators.LINE_HORIZONTAL);
-            Line left = lines.first();
-            Line right = lines.second();
-            return (left.firstPoint.getY() == right.firstPoint.getY()) &&
-                   (left.secondPoint.getX() > right.firstPoint.getX());
-        }
-        else
-        {
-            lines.sort(Comparators.LINE_VERTICAL);
-            Line lower = lines.first();
-            Line upper = lines.second();
-            return (lower.firstPoint.getX() == upper.firstPoint.getX()) &&
-                   (lower.secondPoint.getY() > upper.firstPoint.getY());
-        }
-    }
-
-    public boolean intersectsWith(final Line other)
-    {
-        if (other == null) return false;
-        if (isParallelTo(other)) return false;
-        lines.set(this, other);
-        lines.sort(Comparators.LINE_VERTICAL);
-
-        final Line lower = lines.first();
-        final Line upper = lines.second();
-        return (lower.secondPoint.getY() > upper.secondPoint.getY())
-               && (upper.secondPoint.getX() > lower.firstPoint.getX()
-               && (upper.firstPoint.getX() < lower.firstPoint.getX()));
-    }
-
-    public boolean contains(Point point)
-    {
-        if (point == null) return false;
-        return point.getX() >= firstPoint.getX() && point.getX() <= secondPoint.getX() && point.getY() >= firstPoint.getY() && point.getY() <= secondPoint.getY();
-    }
-
-    public Point findIntersection(Line other)
-    {
-        float x1 = firstPoint.getX();
-        float y1 = firstPoint.getY();
-        float x2 = secondPoint.getX();
-        float y2 = secondPoint.getY();
-
-        float x3 = other.firstPoint.getX();
-        float y3 = other.firstPoint.getY();
-        float x4 = other.secondPoint.getX();
-        float y4 = other.secondPoint.getY();
-
-        float denominator = (x1 - x2)*(y3 - y4) - (y1 - y2)*(x3 - x4);
-        if (denominator == 0)
-            return null;
-
-        float xNominator = (x1*y2 - y1*x2)*(x3 - x4) - (x1 - x2)*(x3*y4 - y3*x4);
-        float yNominator = (x1*y2 - y1*x2)*(y3 - y4) - (y1 - y2)*(x3*y4 - y3*x4);
-
-        float px = xNominator / denominator;
-        float py = yNominator / denominator;
-
-        Point p = new Point(px,py);
-        return this.contains(p) && other.contains(p) ? p : null;
-    }
-
     @Override
     public String toString()
     {
@@ -173,10 +66,5 @@ public class Line implements Shape, Comparable<Line> {
 
         Line other = (Line)o;
         return firstPoint.equals(other.firstPoint) && secondPoint.equals(other.secondPoint);
-    }
-
-    @Override
-    protected Line clone() {
-        return new Line(firstPoint.clone(), secondPoint.clone());
     }
 }

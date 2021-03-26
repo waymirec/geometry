@@ -2,7 +2,7 @@ package io.nuvalence.geometry.processor;
 
 import io.nuvalence.geometry.dto.AnalyzeRectangleResponse;
 import io.nuvalence.geometry.model.Shape;
-import io.nuvalence.geometry.util.SortedPair;
+import io.nuvalence.geometry.model.SortedPair;
 
 import java.util.ArrayList;
 import java.util.List;

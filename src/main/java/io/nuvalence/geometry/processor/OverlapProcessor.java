@@ -8,7 +8,9 @@ import io.nuvalence.geometry.model.Rectangle;
 import io.nuvalence.geometry.service.RectangleRelationship;
 import io.nuvalence.geometry.service.RectangleState;
 import io.nuvalence.geometry.util.Comparators;
-import io.nuvalence.geometry.util.SortedPair;
+import io.nuvalence.geometry.model.SortedPair;
+import io.nuvalence.geometry.util.LineExt;
+import io.nuvalence.geometry.util.RectangleExt;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +40,7 @@ public class OverlapProcessor implements Processor<Rectangle> {
             return true;
         }
 
-        if (!rectangles.first().overlaps(rectangles.second())) return false;
+        if (!RectangleExt.overlaps(rectangles.first(), rectangles.second())) return false;
 
         List<Point> intersections = inspectSides(rectangles);
         final RectangleState state = intersections.isEmpty()
@@ -71,9 +73,9 @@ public class OverlapProcessor implements Processor<Rectangle> {
 
     private static void discoverIntersections(final Line l1, final Line l2, List<Point> intersections)
     {
-        if (l1.intersectsWith(l2))
+        if (LineExt.intersectsWith(l1, l2))
         {
-            intersections.add(l1.findIntersection(l2));
+            intersections.add(LineExt.findIntersection(l1, l2));
         }
     }
 }

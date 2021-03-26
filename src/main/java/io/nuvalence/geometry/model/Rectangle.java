@@ -74,48 +74,6 @@ final public class Rectangle implements Shape {
         return getUpperRight().getX() - getUpperLeft().getX();
     }
 
-    public boolean isAbove(final Rectangle other)
-    {
-        return other == null || this.getUpperLeft().isAbove(other.getUpperLeft());
-    }
-
-    public boolean isBelow(final Rectangle other)
-    {
-        return other == null || this.getLowerLeft().isBelow(other.getLowerLeft());
-    }
-
-    public boolean isLeftOf(final Rectangle other)
-    {
-        return other == null || this.getLowerLeft().isLeftOf(other.getLowerLeft());
-    }
-
-    public boolean isRightOf(final Rectangle other)
-    {
-        return other == null || this.getLowerRight().isRightOf(other.getLowerRight());
-    }
-
-    public boolean overlaps(final Rectangle other)
-    {
-        if (other == null) return false;
-
-        Rectangle left, right;
-        if (this.getUpperLeft().getX() < other.getUpperLeft().getX())
-        {
-            left = this;
-            right = other;
-        }
-        else
-        {
-            right = this;
-            left = other;
-        }
-
-        boolean horizontalOverlap = right.getLowerLeft().isLeftOf(left.getLowerRight()) && left.getLowerLeft().isLeftOf(right.getLowerRight());
-        boolean verticalOverlap = right.getLowerLeft().isBelow(left.getUpperLeft()) && left.getLowerLeft().isBelow(right.getUpperLeft());
-        return horizontalOverlap && verticalOverlap;
-
-    }
-
     @Override
     public String toString()
     {
@@ -145,11 +103,6 @@ final public class Rectangle implements Shape {
                 topLine.equals(other.topLine) &&
                 rightLine.equals(other.rightLine) &&
                 bottomLine.equals(other.bottomLine);
-    }
-
-    @Override
-    protected Rectangle clone() {
-        return new Rectangle(this.getLowerLeft().clone(), this.getUpperRight().clone());
     }
 
     private void validate()

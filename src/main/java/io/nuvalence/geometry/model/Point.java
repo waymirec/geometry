@@ -20,26 +20,6 @@ final public class Point implements Shape, Comparable<Point> {
         return y;
     }
 
-    public boolean isRightOf(Point other)
-    {
-        return other == null || this.x > other.x;
-    }
-
-    public boolean isLeftOf(Point other)
-    {
-        return other == null || this.x < other.x;
-    }
-
-    public boolean isAbove(Point other)
-    {
-        return other == null || this.y > other.y;
-    }
-
-    public boolean isBelow(Point other)
-    {
-        return other == null || this.y < other.y;
-    }
-
     @Override
     public String toString()
     {
@@ -71,10 +51,5 @@ final public class Point implements Shape, Comparable<Point> {
 
         Point other = (Point)o;
         return other.x == x && other.y == y;
-    }
-
-    @Override
-    protected Point clone() {
-        return new Point(this.x, this.y);
     }
 }

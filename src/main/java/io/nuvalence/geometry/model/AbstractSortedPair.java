@@ -1,6 +1,4 @@
-package io.nuvalence.geometry.util;
-
-import io.nuvalence.geometry.model.Shape;
+package io.nuvalence.geometry.model;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;

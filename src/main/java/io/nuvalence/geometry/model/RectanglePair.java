@@ -1,6 +1,6 @@
-package io.nuvalence.geometry.util;
+package io.nuvalence.geometry.model;
 
-import io.nuvalence.geometry.model.Rectangle;
+import io.nuvalence.geometry.util.Comparators;
 
 import java.util.Comparator;
 

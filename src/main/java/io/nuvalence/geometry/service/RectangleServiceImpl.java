@@ -4,7 +4,7 @@ import io.nuvalence.geometry.dto.AnalyzeRectangleResponse;
 import io.nuvalence.geometry.model.Rectangle;
 import io.nuvalence.geometry.processor.AdjacencyProcessor;
 import io.nuvalence.geometry.processor.OverlapProcessor;
-import io.nuvalence.geometry.util.SortedPair;
+import io.nuvalence.geometry.model.SortedPair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

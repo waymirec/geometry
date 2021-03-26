@@ -1,14 +1,13 @@
 package io.nuvalence.geometry.service;
 
-import io.nuvalence.geometry.dto.AnalyzeRectangleRequest;
 import io.nuvalence.geometry.dto.AnalyzeRectangleResponse;
 import io.nuvalence.geometry.dto.PointDTO;
 import io.nuvalence.geometry.dto.RectangleDTO;
 import io.nuvalence.geometry.factory.RectangleFactory;
 import io.nuvalence.geometry.model.Rectangle;
 import io.nuvalence.geometry.util.Comparators;
-import io.nuvalence.geometry.util.RectanglePair;
-import io.nuvalence.geometry.util.SortedPair;
+import io.nuvalence.geometry.model.RectanglePair;
+import io.nuvalence.geometry.model.SortedPair;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
