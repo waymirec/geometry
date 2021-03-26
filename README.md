@@ -48,7 +48,8 @@ Inspector can be executed in 2 ways:
 ##### Docker #####
 * Clone this repository into a local directory
 * Open a terminal into the directory where the repository was cloned
-* Execute `inspector.sh`
+* Execute `./build.sh` to build the project
+* Execute `./inspector.sh` to build and run the docker container
 
 
 ##### Pre-Built JAR #####
