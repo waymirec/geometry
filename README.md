@@ -16,6 +16,7 @@ GeometryInspector analyzes geometric shapes and determines various features of t
 ## Requirements ##
 * Java 8+
 * [Maven](https://maven.apache.org/) (if you want to clone and execute the project)
+* [Docker](https://www.docker.com/) (if you want to use the included docker container)
 
 
 ## Features ##
@@ -39,20 +40,19 @@ Given two rectangles as input, GeometryInspector will perform analysis of both r
 
 ## Executing ##
 GeometryInspector can be executed in 2 ways:
-1. Download and execute the pre-built JAR provided [here](https://github.com/waymirec/geometry/blob/master/GeometryInspector-1.0.jar)
-2. Clone the source and load it into the Java IDE of your choice
+1. Run the provided docker container
+2. Download and execute the pre-built JAR provided [here](https://github.com/waymirec/geometry/blob/master/GeometryInspector-1.0.jar)
+
+##### Docker #####
+* Clone this repository into a local directory
+* Open a terminal into the directory where the repository was cloned
+* Execute `inspector.sh`
 
 
-#### Download & Execute ####
+##### Pre-Built JAR #####
 * Download the provided [JAR](https://github.com/waymirec/geometry/blob/master/GeometryInspector-1.0.jar)
    * In a graphical system, double click on the downloaded JAR
    * From a command terminal, change directory to where the JAR resides and execute `java -jar GeometryInspector-<version>.jar` (e.g. java -jar GeometryInspector-1.0.jar)
-
-#### Clone & Execute ####
-* Clone this repository into a local directory
-* Import the code into the Java IDE of your choice (e.g. [IntelliJ IDEA](https://www.jetbrains.com/idea/))
-* Open a terminal into the directory where the repository was cloned
-* Execute `mvnw spring-boot:run`
 
 
 ## Help ##
