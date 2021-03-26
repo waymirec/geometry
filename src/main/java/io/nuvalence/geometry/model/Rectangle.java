@@ -154,6 +154,8 @@ final public class Rectangle implements Shape {
 
     private void validate()
     {
-        if (this.getHeight() < 0 || this.getWidth() < 0) throw new IllegalArgumentException("invalid bounds");
+        if((this.getLowerLeft().getX() >= this.getUpperRight().getX()) ||
+           (this.getLowerLeft().getY() >= this.getUpperRight().getY()))
+            throw new IllegalArgumentException("invalid bounds");
     }
 }

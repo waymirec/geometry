@@ -4,6 +4,11 @@ import io.nuvalence.geometry.dto.AnalyzeRectangleRequest;
 import io.nuvalence.geometry.dto.AnalyzeRectangleResponse;
 import io.nuvalence.geometry.dto.PointDTO;
 import io.nuvalence.geometry.dto.RectangleDTO;
+import io.nuvalence.geometry.factory.RectangleFactory;
+import io.nuvalence.geometry.model.Rectangle;
+import io.nuvalence.geometry.util.Comparators;
+import io.nuvalence.geometry.util.RectanglePair;
+import io.nuvalence.geometry.util.SortedPair;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -109,7 +114,10 @@ public class RectangleServiceImplTests {
 
     private void whenAnalyzed()
     {
-        response = rectangleService.analyze(new AnalyzeRectangleRequest(firstRectangle, secondRectangle));
+        Rectangle a = RectangleFactory.create(firstRectangle);
+        Rectangle b = RectangleFactory.create(secondRectangle);
+        SortedPair<Rectangle> rectangles = new RectanglePair(a, b, Comparators.RECTANGLE_HORIZONTAL);
+        response = rectangleService.analyze(rectangles);
     }
 
     private void thenResponseStateIs(final RectangleState expected)
@@ -177,7 +185,15 @@ public class RectangleServiceImplTests {
                 .withSecondRectangle(1, 2, 3, 3)
                 .withExpectedIntersection(2, 2)
                 .withExpectedIntersection(2, 3)
+                .build(),
+
+            new TestArgsBuilder() // 7
+                .withFirstRectangle(-3, -3, -1, -1)
+                .withSecondRectangle(-4, -4, -2, -2)
+                .withExpectedIntersection(-3, -2)
+                .withExpectedIntersection(-2, -3)
                 .build()
+
         );
     }
 
@@ -201,7 +217,7 @@ public class RectangleServiceImplTests {
 
                 new TestArgsBuilder() // 4
                         .withFirstRectangle(1, 1, 2, 2)
-                        .withSecondRectangle(2, 2, 3, 2)
+                        .withSecondRectangle(2, 2, 3, 3)
                         .build()
 
         );
@@ -250,13 +266,13 @@ public class RectangleServiceImplTests {
 
             new TestArgsBuilder() // 4
                 .withFirstRectangle(1, 1, 3, 3)
-                .withSecondRectangle(2, 3, 4, 3)
+                .withSecondRectangle(2, 3, 4, 4)
                 .withExpectedSubState(RectangleAdjacencyState.PARTIAL)
                 .build(),
 
             new TestArgsBuilder() // 5
                 .withFirstRectangle(1, 1, 5, 2)
-                .withSecondRectangle(2, 2, 3, 2)
+                .withSecondRectangle(2, 2, 3, 3)
                 .withExpectedSubState(RectangleAdjacencyState.SUB_LINE)
                 .build()
         );

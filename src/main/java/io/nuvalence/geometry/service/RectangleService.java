@@ -1,8 +1,9 @@
 package io.nuvalence.geometry.service;
 
-import io.nuvalence.geometry.dto.AnalyzeRectangleRequest;
 import io.nuvalence.geometry.dto.AnalyzeRectangleResponse;
+import io.nuvalence.geometry.model.Rectangle;
+import io.nuvalence.geometry.util.SortedPair;
 
 public interface RectangleService {
-    AnalyzeRectangleResponse analyze(AnalyzeRectangleRequest request);
+    AnalyzeRectangleResponse analyze(SortedPair<Rectangle> rectangles);
 }
