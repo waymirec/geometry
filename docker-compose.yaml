@@ -1,0 +1,15 @@
+version: '2'
+services:
+    geometry-inspector:
+        container_name: geometry-inspector
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        image: geometry-inspector:latest
+        ports:
+            - 8080:8080
+        networks:
+            - spring-cloud-network
+networks:
+    spring-cloud-network:
+        driver: bridge
