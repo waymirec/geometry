@@ -9,8 +9,9 @@ Do you sometimes find yourself in a situation where you need to know the points 
 Look no further!
 
 
-## Description ##
-Inspector analyzes geometric shapes and determines various features of those shapes and how the input shapes relate to each other. 
+## Getting Started ##
+Inspector is a REST API that provides resources for analyzing geometric shapes, determines features of the shapes and how they relate to each other, and returns
+its findings in JSON form. Having been built around [Spring Boot](https://spring.io/projects/spring-boot), and designed to run within a [Docker](https://www.docker.com) container, getting started with Inspector is as simple as downloading the project, building, and running the service.
 
 
 ## Requirements ##
