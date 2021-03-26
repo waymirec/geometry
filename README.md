@@ -10,7 +10,7 @@ Look no further!
 
 
 ## Description ##
-GeometryInspector analyzes geometric shapes and determines various features of those shapes and how the input shapes relate to each other. 
+Inspector analyzes geometric shapes and determines various features of those shapes and how the input shapes relate to each other. 
 
 
 ## Requirements ##
@@ -23,12 +23,12 @@ GeometryInspector analyzes geometric shapes and determines various features of t
 Version 1.0 is an early release supporting a reduced feature set with a singular focus on comparing 2 rectangles.
 
 
-### Rectangle Analsyis ###
+#### Rectangle Analsyis ####
 Currently only rectangle-to-rectangle comparison is available. See the Appendix below.
 
 
-#### Rectangle Comparison ####
-Given two rectangles as input, GeometryInspector will perform analysis of both rectangles and provide output with how the rectangles relate to each other. If the rectangles overlap each other, the response will include the points at which they intersect. Below are the currently supported relationships:
+##### Rectangle Comparison #####
+Given two rectangles as input, Inspector will perform analysis of both rectangles and provide output with how the rectangles relate to each other. If the rectangles overlap each other, the response will include the points at which they intersect. Below are the currently supported relationships:
 * Intersection - rectangle `A` and rectangle `B` have one or more intersecting lines. The points of intersection will be provided as a list of point objects (_refer to appendix 1_)
 * Contained - either rectangle `A` or rectangle `B` wholly contains the other within it's bounds (_refer to appendix 2_)
 * Adjacency - rectangle `A` is adjacent to rectangle `B`, sharing a side but not overlapping. (_refer to appendix 3_)
@@ -37,9 +37,11 @@ Given two rectangles as input, GeometryInspector will perform analysis of both r
     *  Sub-Line - one side of rectangle `A` is a line that exists as a set of points wholly contained on some other side of rectangle `B`
 * Separated - rectangle `A` and rectangle `B` do not touch or overlap
 
+#### Caching ####
+Inspector is designed to reduce load by caching results, with a default TTL of 15 seconds.
 
 ## Executing ##
-GeometryInspector can be executed in 2 ways:
+Inspector can be executed in 2 ways:
 1. Run the provided docker container
 2. Download and execute the pre-built JAR provided [here](https://github.com/waymirec/geometry/blob/master/GeometryInspector-1.0.jar)
 
@@ -56,9 +58,9 @@ GeometryInspector can be executed in 2 ways:
 
 
 ## Help ##
-* API reference is available within GeometryInspector via [Swagger](https://swagger.io/)
+* API reference is available within Inspector via [Swagger](https://swagger.io/)
     * http://localhost:8080/swagger-ui.html#
-* Examples of how to make various calls to GeometryInspector are available within the provided [Postman](https://www.postman.com/) collection
+* Examples of how to make various calls to Inspector are available within the provided [Postman](https://www.postman.com/) collection
     * [geometry.postman_collection.json](https://github.com/waymirec/geometry/blob/master/geometry.postman_collection.json)
 
 
