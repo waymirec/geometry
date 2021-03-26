@@ -28,9 +28,9 @@ Currently only rectangle-to-rectangle comparison is available. See the Appendix 
 
 #### Rectangle Comparison ####
 Given two rectangles as input, GeometryInspector will perform analysis of both rectangles and provide output with how the rectangles relate to each other. If the rectangles overlap each other, the response will include the points at which they intersect. Below are the currently supported relationships:
-* Intersection - rectangle `A` and rectangle `B` have one or more intersecting lines. The points of intersection will be provided as a list of point objects (ref. appendix 2)
-* Contained - either rectangle `A` or rectangle `B` wholly contains the other within it's bounds (ref. appendix 2)
-* Adjacency - rectangle `A` is adjacent to rectangle `B`, sharing a side but not overlapping. (ref. appendix 3)
+* Intersection - rectangle `A` and rectangle `B` have one or more intersecting lines. The points of intersection will be provided as a list of point objects (_refer to appendix 1_)
+* Contained - either rectangle `A` or rectangle `B` wholly contains the other within it's bounds (_refer to appendix 2_)
+* Adjacency - rectangle `A` is adjacent to rectangle `B`, sharing a side but not overlapping. (_refer to appendix 3_)
     *  Proper - one side of rectangle `A` exactly lines up with a side of rectangle `B`
     *  Partial - some line segment on a side of rectangle `A` exists as a set of points on some side of Rectangle `B`
     *  Sub-Line - one side of rectangle `A` is a line that exists as a set of points wholly contained on some other side of rectangle `B`
