@@ -35,13 +35,15 @@
 							"raw": "{\n  \"first\": { \n    \"lowerLeftX\": 1, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 5, \n    \"upperRightY\": 5 \n  },\n    \"second\": { \n    \"lowerLeftX\": 2, \n    \"lowerLeftY\": 2, \n    \"upperRightX\": 3, \n    \"upperRightY\": 3 \n  }\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/geometry/rectangle/analyze",
+							"raw": "http://localhost:8080/api/v1/geometry/rectangle/analyze",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
+								"v1",
 								"geometry",
 								"rectangle",
 								"analyze"
@@ -77,13 +79,15 @@
 							"raw": "{\n  \"first\": { \n    \"lowerLeftX\": 1, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 3, \n    \"upperRightY\": 3 \n  },\n    \"second\": { \n    \"lowerLeftX\": 2, \n    \"lowerLeftY\": 2, \n    \"upperRightX\": 4, \n    \"upperRightY\": 5 \n  }\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/geometry/rectangle/analyze",
+							"raw": "http://localhost:8080/api/v1/geometry/rectangle/analyze",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
+								"v1",
 								"geometry",
 								"rectangle",
 								"analyze"
@@ -119,13 +123,15 @@
 							"raw": "{\n  \"first\": { \n    \"lowerLeftX\": 1, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 3, \n    \"upperRightY\": 3 \n  },\n    \"second\": { \n    \"lowerLeftX\": 4, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 7, \n    \"upperRightY\": 3 \n  }\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/geometry/rectangle/analyze",
+							"raw": "http://localhost:8080/api/v1/geometry/rectangle/analyze",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
+								"v1",
 								"geometry",
 								"rectangle",
 								"analyze"
@@ -161,13 +167,15 @@
 							"raw": "{\n  \"first\": { \n    \"lowerLeftX\": 1, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 3, \n    \"upperRightY\": 3 \n  },\n    \"second\": { \n    \"lowerLeftX\": 4, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 7, \n    \"upperRightY\": 3 \n  }\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/geometry/rectangle/analyze",
+							"raw": "http://localhost:8080/api/v1/geometry/rectangle/analyze",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
+								"v1",
 								"geometry",
 								"rectangle",
 								"analyze"
@@ -203,13 +211,15 @@
 							"raw": "{\n  \"first\": { \n    \"lowerLeftX\": 1, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 4, \n    \"upperRightY\": 4 \n  },\n    \"second\": { \n    \"lowerLeftX\": 4, \n    \"lowerLeftY\": 2, \n    \"upperRightX\": 7, \n    \"upperRightY\": 3 \n  }\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/geometry/rectangle/analyze",
+							"raw": "http://localhost:8080/api/v1/geometry/rectangle/analyze",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
+								"v1",
 								"geometry",
 								"rectangle",
 								"analyze"
@@ -245,13 +255,15 @@
 							"raw": "{\n  \"first\": { \n    \"lowerLeftX\": 1, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 4, \n    \"upperRightY\": 4 \n  },\n    \"second\": { \n    \"lowerLeftX\": 4, \n    \"lowerLeftY\": 2, \n    \"upperRightX\": 7, \n    \"upperRightY\": 5 \n  }\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/geometry/rectangle/analyze",
+							"raw": "http://localhost:8080/api/v1/geometry/rectangle/analyze",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
+								"v1",
 								"geometry",
 								"rectangle",
 								"analyze"
@@ -287,13 +299,15 @@
 							"raw": "{\n  \"first\": { \n    \"lowerLeftX\": 1, \n    \"lowerLeftY\": 1, \n    \"upperRightX\": 4, \n    \"upperRightY\": 4 \n  },\n    \"second\": { \n    \"lowerLeftX\": 4, \n    \"lowerLeftY\": 2, \n    \"upperRightX\": 7, \n    \"upperRightY\": 5 \n  }\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/geometry/rectangle/analyze",
+							"raw": "http://localhost:8080/api/v1/geometry/rectangle/analyze",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
+								"v1",
 								"geometry",
 								"rectangle",
 								"analyze"
