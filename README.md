@@ -23,18 +23,18 @@ Version 1.0 is an early release supporting a reduced feature set with a singular
 
 
 ### Rectangle Analsyis ###
-Currently only rectangle-to-rectangle comparison is available
+Currently only rectangle-to-rectangle comparison is available. See the Appendix below.
 
 
 #### Rectangle Comparison ####
 Given two rectangles as input, GeometryInspector will perform analysis of both rectangles and provide output with how the rectangles relate to each other. If the rectangles overlap each other, the response will include the points at which they intersect. Below are the currently supported relationships:
-* Separated - rectangle `A` and rectangle `B` do not touch or overlap
-* Contained - either rectangle `A` or rectangle `B` wholly contains the other within it's bounds
-* Adjacency - rectangle `A` is adjacent to rectangle `B`, sharing a side but not overlapping. 
+* Intersection - rectangle `A` and rectangle `B` have one or more intersecting lines. The points of intersection will be provided as a list of point objects (ref. appendix 2)
+* Contained - either rectangle `A` or rectangle `B` wholly contains the other within it's bounds (ref. appendix 2)
+* Adjacency - rectangle `A` is adjacent to rectangle `B`, sharing a side but not overlapping. (ref. appendix 3)
     *  Proper - one side of rectangle `A` exactly lines up with a side of rectangle `B`
     *  Partial - some line segment on a side of rectangle `A` exists as a set of points on some side of Rectangle `B`
     *  Sub-Line - one side of rectangle `A` is a line that exists as a set of points wholly contained on some other side of rectangle `B`
-* Intersection - rectangle `A` and rectangle `B` have one or more intersecting lines. The points of intersection will be provided as a list of point objects
+* Separated - rectangle `A` and rectangle `B` do not touch or overlap
 
 
 ## Executing ##
@@ -120,3 +120,10 @@ GeometryInspector can be executed in 2 ways:
 >    "intersections": []
 >}
 >```
+
+## Appendix ##
+<img width="816" alt="Screen Shot 2021-03-25 at 5 19 33 PM" src="https://user-images.githubusercontent.com/1775806/112559580-7bfd4380-8d8e-11eb-884b-fa20497cad84.png">
+
+<img width="816" alt="Screen Shot 2021-03-25 at 5 19 54 PM" src="https://user-images.githubusercontent.com/1775806/112559579-7bfd4380-8d8e-11eb-9fd0-e3ddc3b130ff.png">
+
+<img width="816" alt="Screen Shot 2021-03-25 at 5 20 09 PM" src="https://user-images.githubusercontent.com/1775806/112559577-7acc1680-8d8e-11eb-9ff0-2e28e3a6ad77.png">
