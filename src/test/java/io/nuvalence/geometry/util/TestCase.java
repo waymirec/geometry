@@ -1,4 +1,4 @@
-package io.nuvalence.geometry.service.util;
+package io.nuvalence.geometry.util;
 
 import java.util.function.Consumer;
 

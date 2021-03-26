@@ -1,11 +1,10 @@
 package io.nuvalence.geometry.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import io.nuvalence.geometry.GeometryApplication;
 import io.nuvalence.geometry.dto.ClientAnalyzeRectangleResponse;
-import io.nuvalence.geometry.service.util.AnalyzeRectangleRequestBuilder;
-import io.nuvalence.geometry.service.util.RectangleBuilder;
+import io.nuvalence.geometry.builder.AnalyzeRectangleRequestBuilder;
+import io.nuvalence.geometry.builder.RectangleBuilder;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
